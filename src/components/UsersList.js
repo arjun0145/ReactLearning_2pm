@@ -5,17 +5,27 @@ import { GetData } from "../services/Inquiry.js";
 
 function UsersList() {
   const [user, setuser] = useState([]);
+
+
+  // here is fetchusers fucntion which will fetch all users through api
+
+
   const fetchusers = async () => {
-    // const res = await fetch("http://localhost:9200/getdata");
-    // const data = await res.json();
-    // setuser(data);
-    // console.log(data);
-   const res =  GetData()
-   console.log(res);
+ 
+   const res =  GetData()  // GetData function is written in service.js file inside Services folder
+   setuser(res.data)
+
   };
+
+
+  // Here is useEffect Hook which will fetch all users
+
   useEffect(() => {
-    fetchusers();
+    fetchusers();  // this function will set the users in state
+
   }, []);
+
+
   return (
     <div>
       <Container>
