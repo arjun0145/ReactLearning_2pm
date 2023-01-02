@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arjun = [];
+        let arr = [3, 3, 3, 4, 4, 5, 5, 8, 8, 9, 9, 3, 3, 31, 1, 1, 3, 3, 78, 78, 78, 9,];
+
+        let temp;
+
+        async function getdata(arr) {
+            let size = arr.length - 1;
+            for (let i = 0; i <= size; i++) {
+                for (let j = 0; j <= size; j++) {
+                    if (arr[i] >= arr[j]) {
+                    } else {
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            arjun.push(arr[0])
+
+            for (i = 0; i < arr.length; i++) {
+                if (arr[i] != arjun[arjun.length - 1]) {
+                    arjun.push(arr[i])
+                }
+
+            }
+
+            return arjun;
+        }
+
+        let x = getdata(arr)
+        console.log(x)
+
+
+
+
+
+    </script>
+    <input type="button" value="getdata/>
+  </body>
+</html>
